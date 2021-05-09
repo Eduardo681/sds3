@@ -1,6 +1,8 @@
 package com.eduardo.dsvendas.controllers;
 
 import com.eduardo.dsvendas.dto.SaleDTO;
+import com.eduardo.dsvendas.dto.SaleSucessDTO;
+import com.eduardo.dsvendas.dto.SaleSumDTO;
 import com.eduardo.dsvendas.dto.SellerDTO;
 import com.eduardo.dsvendas.entities.Sale;
 import com.eduardo.dsvendas.services.SaleService;
@@ -24,6 +26,18 @@ public class SaleController {
     @GetMapping
     public ResponseEntity <Page<SaleDTO>> findAll(Pageable pageable){
         Page<SaleDTO> list = service.findAll(pageable);
+        return ResponseEntity.ok(list);
+    }
+
+    @GetMapping(value = "amount-by-seller")
+    public ResponseEntity <List<SaleSumDTO>> amountGroupedBySeller(){
+        List<SaleSumDTO> list = service.amountGroupedBySeller();
+        return ResponseEntity.ok(list);
+    }
+
+    @GetMapping(value = "success-by-seller")
+    public ResponseEntity <List<SaleSucessDTO>> sucessGroupedBySeller(){
+        List<SaleSucessDTO> list = service.sucessGroupedBySeller();
         return ResponseEntity.ok(list);
     }
 }
