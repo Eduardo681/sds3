@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://eduardo-hsds3.herokuapp.com';
+export const BASE_URL = 'http://192.168.0.124:8686';
