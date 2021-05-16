@@ -1,1 +1,1 @@
-export const BASE_URL = process.env.REACT_APP_BACKEND_URL ?? 'http://192.168.0.124:8686';
+export const BASE_URL = process.env.REACT_APP_BACKEND_URL ?? 'https://eduardo-hsds3.herokuapp.com';
